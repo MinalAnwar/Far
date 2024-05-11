@@ -3,7 +3,7 @@ import Navbar from "./navbar";
 import OurVision from "./ourvision";
 import TrustedPartners from "./TrustedPartners";
 import HowWorks from "./howItWorks";
-import Footer from "../footer";
+import Footer from "./footer";
 import WhyUs from "./Whyus.jsx";
 import OurTeam from "./OurTeam";
 import CustomerReview from "./WhatCustomerSaid";

@@ -2,7 +2,7 @@ import Navbar from "./navbar";
 import ButtonFilled from "./buttonFilled";
 import FarmerStats from "./FarmerStats";
 import ListingCard from "./card";
-import Footer from "../footer";
+import Footer from "./footer";
 const FarmerHome = (props) => {
     return (
         <div>

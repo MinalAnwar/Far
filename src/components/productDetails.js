@@ -3,7 +3,7 @@ import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import Navbar from "./navbar";
 import ButtonFilled from './buttonFilled';
-import Footer from '../footer';
+import Footer from './footer';
 
 const ProductDetails = (props) => {
     const [images, setImages] = useState([]);

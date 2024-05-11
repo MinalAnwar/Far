@@ -1,6 +1,6 @@
 import Navbar from "./navbar";
 import FaqQuestionsDiv from "./faqQuestionDiv";
-import Footer from "../footer";
+import Footer from "./footer";
 const FAQs = () => {
     return (
         <div>

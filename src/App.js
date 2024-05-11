@@ -12,7 +12,7 @@ import SignUpForm from './components/signup';
 import NegotiateRequest from './components/negotiateRequest';
 import ShopingCart from './components/cart';
 import OrderTable from './components/table';
-import Footer from './footer';
+import Footer from './components/footer.js';
 import ContactsUs from './components/contactus';
 import FAQs from './components/Faq\'s';
 import Listing from './components/CreateEditListing';

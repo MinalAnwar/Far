@@ -3,8 +3,30 @@ import Navbar from "./navbar";
 import { useState, useEffect } from "react";
 import ListingCard from "./card";
 import ButtonBorder from "./buttonBorder";
-import Footer from "../footer";
+import Footer from "./footer";
+import { useInView } from "react-intersection-observer";
 const Market = () => {
+
+    const [ref, inView] = useInView();
+    const [isVisible, setIsVisible] = useState(false);
+    
+
+    useEffect(() => {
+        if (inView) {
+
+            const timer = setTimeout(() => {
+                setIsVisible(true);
+               
+            }, 200);
+
+
+            return () => {
+                clearTimeout(timer);
+                setIsVisible(false);
+               
+            };
+        }
+    }, [inView]);
 
     const [selectedCategory, setSelectedCategory] = useState('');
     const [imageIndex, setImageIndex] = useState(0);
@@ -30,12 +52,14 @@ const Market = () => {
             setImageIndex(prevIndex => (prevIndex + 1) % images.length);
         }, 4000);
 
-        return () => clearInterval(interval);
+        return () => {clearInterval(interval);
+        setImageIndex(false);
+    }
     }, []);
     return (
         <div>
             <Navbar></Navbar>
-            <div className="flex items-center justify-center">
+            <div >
                 <div className="w-screen h-screen bg-gray-100 flex flex-col md:flex-row bg-white overflow-hidden">
                     <div className="w-full h-full flex items-start md:items-center md:w-1/2 px-6 py-8">
                         <div className="flex flex-col">
@@ -58,7 +82,7 @@ const Market = () => {
             <div className="flex justify-start ml-8 ">
                 <div class="block max-w-sm  p-6 bg-white border-2 w-3/4 border border-gray-200 shadow-2xl rounded-lg hover:shadow-2xl  ">
 
-                    <h5 class="mb-2 text-3xl font-bold  text-green-500">Filter By</h5>
+                    <h5 class="mb-2 text-3xl font-bold  text-green-500" >Filter By</h5>
                     <div className="mt-5 flex flex-wrap ">
                         <ButtonBorder isFlex="flex-1" title="A - Z" fonts="semibold" textColor="green-500"></ButtonBorder>
                         <ButtonBorder isFlex="flex-1" title="Price " fonts="semibold" textColor="green-500" ></ButtonBorder>
@@ -78,7 +102,7 @@ const Market = () => {
                 </div>
             </div>
 
-            <div className="flex flex-wrap">
+            <div ref={ref} className={`flex flex-wrap transition-opacity duration-1000 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
                 <ListingCard image="/Assets/images/img.jpg" title="Listing Title" description="add some description here." amount="50 Kg" price="250" ></ListingCard>
                 <ListingCard image="/Assets/images/img.jpg" title="Listing Title" description="add some description here." amount="50 Kg" price="250" ></ListingCard>
                 <ListingCard image="/Assets/images/img.jpg" title="Listing Title" description="add some description here." amount="50 Kg" price="250" ></ListingCard>

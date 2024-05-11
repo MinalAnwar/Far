@@ -28,11 +28,11 @@ const Footer = () => {
     };
     return (
         <div className="shadow-2xl  mt-24 ">
-            <div className="px-6 pt-8 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-14 lg:px-14">
+            <div className="px-6 pt-8 shadow-2xl mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-14 lg:px-14">
                 <div className="grid gap-10 row-gap-6 mb-8 sm:grid-cols-2 lg:grid-cols-4">
                     <div className="sm:col-span-2">
                         <a href="/" aria-label="Go home" title="FarmTech" className="inline-flex items-center">
-                            <span className="mt-8 text-4xl font-bold tracking-wide text-green-500 ">FarmTech</span>
+                            <span className=" text-4xl font-bold tracking-wide text-green-500 ">FarmTech</span>
                         </a>
                         <div className="mt-3 lg:max-w-sm">
                             <p className="text-sm text-gray-500">
@@ -57,7 +57,7 @@ const Footer = () => {
                             </a>
                         </div>
                     </div>
-                    <div className="mt-6 md:mt-8">
+                    <div className="">
                         <span className="text-2xl font-bold tracking-wide text-green-500">Social</span>
                         <div className="flex items-center mt-1 space-x-3">
                             <a href="/" className="text-gray-500 transition-colors duration-300 hover:text-green-800">

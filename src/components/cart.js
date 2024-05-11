@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Navbar from "./navbar";
 import ButtonFilled from './buttonFilled';
-import Footer from '../footer';
+import Footer from './footer';
 
 const ShopingCart = (props) => {
     const taxes = 10;

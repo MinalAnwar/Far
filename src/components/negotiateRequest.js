@@ -1,6 +1,6 @@
 import Navbar from "./navbar";
 import ButtonFilled from "./buttonFilled";
-import Footer from "../footer";
+import Footer from "./footer";
 
 const NegotiateRequest = (props) => {
     return (
